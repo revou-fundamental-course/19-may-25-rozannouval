@@ -1,0 +1,155 @@
+/* IMPORT GOOGLE FONT (Ancizar Sans) */
+@import url("https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #003366;
+  --secondary: #4da6ff;
+  --accent: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --divider: #dee2e6;
+}
+
+/* PARTICLES JS */
+#particles-js {
+  width: 100%;
+  height: 100dvh;
+  background-image: url("https://cdn0.ecologiaverde.com/es/posts/0/9/0/un_aumento_de_4_grados_para_2100_90_0_600.jpg");
+  background-color: rgba(0, 0, 0, 0.813);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/* KONFIGURASI DEFAULT TAG */
+a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+li {
+  list-style: none;
+}
+
+html {
+  font-family: "Ancizar Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+}
+
+/* HEADER CSS */
+header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+header > ul > li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(
+    to right bottom,
+    rgba(128, 0, 128, 0.847),
+    rgba(223, 57, 57, 0.847)
+  );
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  background: var(--divider);
+  gap: 4px;
+  font-size: 1.25rem;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  transform: translateY(-7%);
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link:nth-child(1):hover {
+  background: var(--secondary);
+}
+.nav-link:nth-child(2):hover {
+  background: var(--danger);
+}
+.nav-link:nth-child(3):hover {
+  background: var(--accent);
+}
+
+/* HOME SECTION */
+.typing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  min-height: 100dvh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.528);
+}
+
+.typing-card {
+  background: rgba(96, 0, 0, 0.44);
+  backdrop-filter: blur(5px);
+  width: 40rem;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  border: 3px solid white;
+}
+
+#typing {
+  color: white;
+  font-size: 2rem;
+}
+
+.typing-container > .suhu-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(219, 114, 27, 0.752);
+  padding: 0.5rem 2rem;
+  font-size: 20px;
+  border-radius: 7px;
+  color: white;
+  border: 2px solid white;
+  transition: all 0.3s;
+}
+
+.typing-container > .suhu-btn:hover {
+  background: rgba(222, 20, 20, 0.854);
+}
+
+/* TEMPERATURE SECTION */
+
+
+/* FOOTER CSS */

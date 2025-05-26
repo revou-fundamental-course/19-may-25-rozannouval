@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Project RevoU</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-particle.css" />
+
+    <!-- CDN FEATHER ICONS -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- CDN AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- CDN TYPEIT -->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+  </head>
+  <body>
+    <!-- HEADER CONTENT -->
+    <header>
+      <ul>
+        <li data-aos="fade-down" data-aos-duration="1000">
+          <a href="#home" class="nav-link"><i data-feather="home"></i>Home</a>
+          <a href="#suhu" class="nav-link"
+            ><i data-feather="thermometer"></i>Temperature</a
+          >
+          <a href="#dev" class="nav-link"
+            ><i data-feather="alert-circle"></i>Developer</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <section id="particles-js">
+        <div class="typing-container">
+          <div data-aos="fade-up" data-aos-duration="1000" class="typing-card">
+            <span id="typing"></span>
+          </div>
+          <a href="#temperature" class="suhu-btn"><i data-feather="thermometer"></i>Temperature Calculator <i data-feather="arrow-down"></i></a>
+        </div>
+      </section>
+      <section id="temperature">
+        
+      </section>
+      <section id="dev"></section>
+    </main>
+
+    <!-- FOOTER CONTENT -->
+    <footer></footer>
+
+    <!-- PARTICLES JS -->
+    <script src="js/particles/particles.js"></script>
+    <script src="js/particles/app.js"></script>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
