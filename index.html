@@ -23,7 +23,7 @@
       <ul>
         <li data-aos="fade-down" data-aos-duration="1000">
           <a href="#home" class="nav-link"><i data-feather="home"></i>Home</a>
-          <a href="#suhu" class="nav-link"
+          <a href="#temperature" class="nav-link"
             ><i data-feather="thermometer"></i>Temperature</a
           >
           <a href="#dev" class="nav-link"
@@ -35,26 +35,148 @@
 
     <!-- MAIN CONTENT -->
     <main>
-      <section id="particles-js">
+      <section id="home">
         <div class="typing-container">
           <div data-aos="fade-up" data-aos-duration="1000" class="typing-card">
             <span id="typing"></span>
           </div>
-          <a href="#temperature" class="suhu-btn"><i data-feather="thermometer"></i>Temperature Calculator <i data-feather="arrow-down"></i></a>
+          <div data-aos="fade-up" data-aos-duration="2000">
+            <a href="#temperature" class="suhu-btn"
+              ><i data-feather="thermometer"></i>Temperature Calculator
+              <i data-feather="arrow-down"></i
+            ></a>
+          </div>
         </div>
       </section>
+
+      <!-- TEMPERATURE CONTENT -->
       <section id="temperature">
+        <!-- WAVE SVG -->
+        <img src="assets/svg/wave.svg" alt="wave" class="wave" />
+        <div class="temperature-content">
+          <h1
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            class="temperature-title"
+          >
+            Celsius ↔ Fahrenheit Converter
+          </h1>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="temperature-paragraf"
+          >
+            Masukkan suhu derajat Celsius (&deg;C) ke kotak dibawah, lalu klik
+            tombol Konversi untuk mendapatkan hasil konversi dalam bentuk
+            Fahrenheit (&deg;F).
+          </p>
+
+          <!-- FORM KONVERSI SUHU -->
+          <form>
+            <!-- TEMPERATURE FORM -->
+            <div class="form-temperature">
+              <div
+                class="celsius-content"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+              >
+                <h3>
+                  <i data-feather="thermometer"></i>TEMPERATURE CALCULATOR
+                </h3>
+
+                <!-- INPUT CELSIUS -->
+                <div class="">
+                  <label for="input-celsius">Celsius (&deg;C):</label>
+                  <input
+                    type="number"
+                    id="input-celsius"
+                    placeholder="Masukkan Celsius..."
+                  />
+                  <div>
+                    <button class="btn-konversi">Konversi</button>
+                    <button class="btn-reset">Reset</button>
+                    <button class="btn-reverse">Reverse</button>
+                  </div>
+                </div>
+
+                <!-- INPUT FAHRENHEIT -->
+                <div class="fahrenheit">
+                  <label for="input-fahrenheit">Fahrenheit (&deg;F):</label>
+                  <input
+                    type="number"
+                    id="input-fahrenheit"
+                    readonly
+                    placeholder="Hasil Fahrenheit"
+                  />
+                </div>
+
+                <div class="kalkulasi">
+                  <label for="detail-suhu">Penjelasan:</label>
+                  <textarea id="detail-suhu" readonly></textarea>
+                </div>
+              </div>
+
+              <!-- CALCULATOR INFO -->
+              <div
+                data-aos="fade-left"
+                data-aos-duration="1000"
+                class="calculator-info"
+              >
+                <h3>
+                  <i data-feather="book-open"></i>Apa Itu Celsius dan
+                  Fahrenheit?
+                </h3>
+                <p>
+                  Celsius dan Fahrenheit adalah dua skala yang digunakan untuk
+                  mengukur suhu.
+                  <br /><br />
+                  <strong>Celsius (°C):</strong> Digunakan secara luas di
+                  seluruh dunia, terutama di negara-negara yang menggunakan
+                  sistem metrik. Titik beku air adalah 0°C dan titik didihnya
+                  100°C. <br /><br />
+                  <strong>Fahrenheit (°F):</strong> Umum digunakan di Amerika
+                  Serikat. Titik beku air adalah 32°F dan titik didihnya 212°F,
+                  sedangkan titik didihnya berada pada suhu 212°F pada tekanan
+                  udara normal. <br /><br />
+                  Gunakan kalkulator ini untuk mengonversi antara kedua satuan
+                  tersebut secara akurat dan mudah!
+                </p>
+              </div>
+            </div>
+          </form>
+
+          <div class="rumus-container">
+            <h2 data-aos="fade-right" data-aos-duration="1000">Cara Konversi Celcius (&deg;C) ke Fahrenheit (&deg;F)</h2>
+
+            <div>
+              <p data-aos="fade-right" data-aos-duration="1000">
+                Suhu S dalam derajat Fahrenheit (&deg;F) sama dengan suhu S
+                dalam derajat Celsius (&deg;C) kali 9/5 tambah 32
+              </p>
+              <div class="rumus">
+                <p class="rumus-content" data-aos="fade-right" data-aos-duration="1000">
+                  S<sub>(&deg;F)</sub> = (S<sub>(&deg;C)</sub> x 9/5) + 32
+                </p>
+                <p class="rumus-text" data-aos="zoom-in" data-aos-duration="2000">ATAU</p>
+                <p class="rumus-content" data-aos="fade-left" data-aos-duration="1000">
+                  S<sub>(&deg;F)</sub> = (S<sub>(&deg;C)</sub> x 1.8) + 32
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="dev">
         
       </section>
-      <section id="dev"></section>
     </main>
 
     <!-- FOOTER CONTENT -->
     <footer></footer>
 
     <!-- PARTICLES JS -->
-    <script src="js/particles/particles.js"></script>
-    <script src="js/particles/app.js"></script>
+    <script src="js/particlesjs/particles.js"></script>
+    <script src="js/particlesjs/app.js"></script>
 
     <script src="js/script.js"></script>
   </body>

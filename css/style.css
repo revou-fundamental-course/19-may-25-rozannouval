@@ -19,17 +19,6 @@
   --divider: #dee2e6;
 }
 
-/* PARTICLES JS */
-#particles-js {
-  width: 100%;
-  height: 100dvh;
-  background-image: url("https://cdn0.ecologiaverde.com/es/posts/0/9/0/un_aumento_de_4_grados_para_2100_90_0_600.jpg");
-  background-color: rgba(0, 0, 0, 0.813);
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
-
 /* KONFIGURASI DEFAULT TAG */
 a {
   text-decoration: none;
@@ -40,13 +29,18 @@ li {
   list-style: none;
 }
 
+button {
+  border: none;
+}
+
 html {
   font-family: "Ancizar Sans", sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background: #ffffff;
+  background: var(--danger);
 }
 
 /* HEADER CSS */
@@ -64,13 +58,10 @@ header > ul > li {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: linear-gradient(
-    to right bottom,
-    rgba(128, 0, 128, 0.847),
-    rgba(223, 57, 57, 0.847)
-  );
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.89));
   padding: 0.5rem 1rem;
   border-radius: 7px;
+  border: 1px solid white;
 }
 
 .nav-link {
@@ -78,10 +69,12 @@ header > ul > li {
   align-items: center;
   padding: 0.5rem 1rem;
   border-radius: 7px;
-  background: var(--divider);
+  background: transparent;
+  color: white;
   gap: 4px;
   font-size: 1.25rem;
   transition: all 0.3s;
+  border: 1px solid white;
 }
 
 .nav-link:hover {
@@ -90,24 +83,36 @@ header > ul > li {
   box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-.nav-link:nth-child(1):hover {
+.nav-link:nth-child(1) {
   background: var(--secondary);
 }
-.nav-link:nth-child(2):hover {
+.nav-link:nth-child(2) {
   background: var(--danger);
 }
-.nav-link:nth-child(3):hover {
+.nav-link:nth-child(3) {
   background: var(--accent);
 }
 
 /* HOME SECTION */
+/* PARTICLES JS */
+#home {
+  width: 100%;
+  height: 110dvh;
+  background-image: url("https://cdn0.ecologiaverde.com/es/posts/0/9/0/un_aumento_de_4_grados_para_2100_90_0_600.jpg");
+  background-color: rgba(0, 0, 0, 0.813);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 .typing-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  min-height: 100dvh;
+  min-height: 110dvh;
   position: absolute;
   top: 0;
   left: 0;
@@ -132,7 +137,7 @@ header > ul > li {
   font-size: 2rem;
 }
 
-.typing-container > .suhu-btn {
+.suhu-btn {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -145,11 +150,193 @@ header > ul > li {
   transition: all 0.3s;
 }
 
-.typing-container > .suhu-btn:hover {
+.suhu-btn:hover {
   background: rgba(222, 20, 20, 0.854);
 }
 
 /* TEMPERATURE SECTION */
+#temperature {
+  min-height: 100dvh;
+  margin-top: -5px;
+  background: var(--danger);
+  color: white;
+  font-size: 30px;
+}
 
+.wave {
+  width: 100%;
+  margin-top: -8%; /* Agar menyatu dengan section */
+  position: relative;
+}
+
+.temperature-content {
+  padding: 0 3rem 1rem;
+  min-height: 100vh;
+  max-width: 1766px;
+  margin: auto;
+}
+
+.temperature-title {
+  text-align: center;
+  background: white;
+  color: var(--danger);
+  border-radius: 20px;
+}
+
+.temperature-paragraf {
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+form {
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+
+.form-temperature {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  color: var(--danger);
+}
+
+.form-temperature h3 {
+  background-color: var(--danger);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 100rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 20px;
+}
+
+form input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  margin: .75rem 0;
+  font-size: 20px;
+  color: white;
+  background-color: var(--danger);
+  font-weight: bold;
+}
+
+form input::placeholder {
+  color: white;
+}
+
+form input:focus {
+  outline: none;
+}
+
+.celsius-content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 25px;
+  padding: 1rem 1.5rem;
+}
+
+.celsius-content button {
+  padding: 0.5rem 1rem;
+  font-size: 17px;
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-konversi {
+  background-color: #E63946; /* Merah utama */
+  color: white;
+  border: none;
+}
+
+.btn-reset {
+  background-color: #8D9EFF; /* Biru soft */
+  color: white;
+  border: none;
+}
+
+.btn-reverse {
+  background-color: #e78b35;
+  color: #E63946;
+}
+
+.fahrenheit {
+  margin-top: 1.5rem;
+}
+
+.kalkulasi {
+  display: flex;
+  flex-direction: column;
+}
+
+.kalkulasi textarea {
+  border-radius: 8px;
+  background: var(--danger);
+  color: white;
+  border: none;
+  padding: .5rem 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 7px;
+}
+
+.kalkulasi textarea:focus {
+  outline: none;
+}
+
+.calculator-info {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-size: 20px;
+}
+
+.calculator-info > p {
+  font-size: 22px;
+}
+
+
+/* RUMUS CONTAINER */
+.rumus-container {
+  padding: 1rem;
+}
+
+.rumus-container > h2 {
+  border-bottom: 3px solid white;
+  margin: 1rem 0;
+}
+
+.rumus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 10px;
+}
+
+.rumus-content {
+  background: white;
+  color: var(--danger);
+  padding: 1rem 2rem ;
+  border-radius: 10px;
+  font-size: 40px;
+}
+
+.rumus-text {
+  border-radius: 100rem;
+  background: white;
+  color: var(--danger);
+  padding: 1.8rem 1rem;
+}
 
 /* FOOTER CSS */
