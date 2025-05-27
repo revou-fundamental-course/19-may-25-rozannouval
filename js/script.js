@@ -22,6 +22,33 @@ new TypeIt("#typing", {
   .type("<em>– Albert Einstein</em>")
   .go();
 
+new TypeIt("#developer-name", {
+  speed: 50,
+  waitUntilVisible: true,
+})
+  .type("Rojan", { delay: 300 })
+  .move(-2)
+  .pause(500)
+  .delete(1)
+  .pause(500)
+  .type("z")
+  .pause(500)
+  .move(null, { to: "END" })
+  .type(" Gopal")
+  .move(-4)
+  .pause(500)
+  .delete(1)
+  .pause(500)
+  .type("N")
+  .move(null, { to: "END" })
+  .move(-2)
+  .pause(500)
+  .delete(1)
+  .pause(500)
+  .type("uv")
+  .move(null, { to: "END" })
+  .go();
+
 // AOS KONFIGURASI
 AOS.init();
 

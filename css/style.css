@@ -10,7 +10,7 @@
 :root {
   --primary: #003366;
   --secondary: #4da6ff;
-  --accent: #28a745;
+  --accent: #00cba9;
   --danger: #dc3545;
   --warning: #ffc107;
 
@@ -40,7 +40,7 @@ html {
 }
 
 body {
-  background: var(--danger);
+  /* background: var(--accent); */
 }
 
 /* HEADER CSS */
@@ -161,6 +161,7 @@ header > ul > li {
   background: var(--danger);
   color: white;
   font-size: 30px;
+  padding-bottom: 20rem;
 }
 
 .wave {
@@ -221,7 +222,7 @@ form input {
   border-radius: 8px;
   border: none;
   width: 100%;
-  margin: .75rem 0;
+  margin: 0.75rem 0;
   font-size: 20px;
   color: white;
   background-color: var(--danger);
@@ -254,20 +255,20 @@ form input:focus {
 }
 
 .btn-konversi {
-  background-color: #E63946; /* Merah utama */
+  background-color: #e63946; /* Merah utama */
   color: white;
   border: none;
 }
 
 .btn-reset {
-  background-color: #8D9EFF; /* Biru soft */
+  background-color: #8d9eff; /* Biru soft */
   color: white;
   border: none;
 }
 
 .btn-reverse {
   background-color: #e78b35;
-  color: #E63946;
+  color: #e63946;
 }
 
 .fahrenheit {
@@ -284,7 +285,7 @@ form input:focus {
   background: var(--danger);
   color: white;
   border: none;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1.3rem;
   font-weight: bold;
   margin-top: 7px;
@@ -305,7 +306,6 @@ form input:focus {
   font-size: 22px;
 }
 
-
 /* RUMUS CONTAINER */
 .rumus-container {
   padding: 1rem;
@@ -314,6 +314,7 @@ form input:focus {
 .rumus-container > h2 {
   border-bottom: 3px solid white;
   margin: 1rem 0;
+  padding-bottom: 7px;
 }
 
 .rumus {
@@ -322,12 +323,14 @@ form input:focus {
   align-items: center;
   margin: 2rem 0;
   gap: 10px;
+  border-bottom: 3px solid white;
+  padding-bottom: 2rem;
 }
 
 .rumus-content {
   background: white;
   color: var(--danger);
-  padding: 1rem 2rem ;
+  padding: 1rem 2rem;
   border-radius: 10px;
   font-size: 40px;
 }
@@ -336,7 +339,261 @@ form input:focus {
   border-radius: 100rem;
   background: white;
   color: var(--danger);
-  padding: 1.8rem 1rem;
+  padding: 2rem;
+  width: 5rem;
+  height: 5rem;
+  font-weight: bold;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* SECTION DEVELOPER */
+#dev {
+  min-height: 70dvh;
+  padding-bottom: 20%;
+  width: 100%;
+  background: var(--accent);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wave2 {
+  width: 100%;
+  margin-top: -20%;
+}
+
+.developer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 10rem 1rem 5rem;
+  max-width: 1766px;
+  margin: auto;
+}
+
+.developer-name {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+}
+
+.developer-name h6 {
+  font-size: 35px;
+}
+.developer-name p {
+  font-size: 25px;
+  width: 80%;
+  margin-top: 5px;
+}
+
+.medsos-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+
+.medsos-container a {
+  background: white;
+  padding: 1rem;
+  border-radius: 100%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.linkedin:hover {
+  background: rgb(38, 147, 248);
+  color: white;
+}
+.github:hover {
+  background-color: black;
+  color: white;
+}
+.ig:hover {
+  background: rgb(224, 79, 79);
+  color: white;
+}
+
+
+
 /* FOOTER CSS */
+footer {
+  background: var(--secondary);
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  margin-top: -10px;
+  padding: 0 1rem 3rem;
+}
+
+.wave-footer {
+  position: relative;
+  margin-top: -14%;
+  z-index: 99;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CARD COMPONENT */
+.card {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid var(--primary);
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: var(--danger);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid var(--danger);
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+
+/* TERMINAL COMPONENT */
+@keyframes blinkCursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes typeAndDelete {
+  0%,
+  10% {
+    width: 0;
+  }
+  45%,
+  55% {
+    width: 11em;
+  } /* adjust width based on content */
+  90%,
+  100% {
+    width: 0;
+  }
+}
+
+.terminal-loader {
+  border: 0.1em solid #333;
+  background-color: #1a1a1a;
+  color: #0f0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  padding: 1.5em 1em;
+  width: 15em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.terminal-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.5em;
+  background-color: #333;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 0 0.4em;
+  box-sizing: border-box;
+}
+
+.terminal-controls {
+  float: right;
+}
+
+.control {
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  margin-left: 0.4em;
+  border-radius: 50%;
+  background-color: #777;
+}
+
+.control.close {
+  background-color: #e33;
+}
+
+.control.minimize {
+  background-color: #ee0;
+}
+
+.control.maximize {
+  background-color: #0b0;
+}
+
+.terminal-title {
+  float: left;
+  line-height: 1.5em;
+  color: #eee;
+}
+
+.text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.2em solid green; /* Cursor */
+  animation: typeAndDelete 4s steps(11) infinite,
+    blinkCursor 0.5s step-end infinite alternate;
+  margin-top: 1.5em;
+}
+
