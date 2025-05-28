@@ -55,6 +55,11 @@ AOS.init();
 // FEATHER ICONS KONFIGURASI
 feather.replace();
 
+// NOTIFY KONFIGURASI
+var notyf = new Notyf({
+  duration: 5000, // Set your global Notyf configuration here
+});
+
 // Mode konversi: true = Celsius ke Fahrenheit, false = Fahrenheit ke Celsius
 let modeCelsiusToFahrenheit = true;
 
@@ -66,18 +71,25 @@ let penjelasanSuhu = document.getElementById("detail-suhu");
 // Fungsi untuk KONVERSI suhu
 function konversiSuhu() {
   // Ambil nilai input berdasarkan mode
-  let inputSuhu = modeCelsiusToFahrenheit
-    ? inputCelsius.value
-    : inputFahrenheit.value;
 
   // Validasi input - pastikan input adalah angka
-  if (inputSuhu === "" || isNaN(inputSuhu)) {
-    alert("Mohon masukkan angka yang valid!");
+  if (inputCelsius.value === "" || isNaN(inputCelsius.value)) {
+    notyf.error({
+      background: "#d30606",
+      dismissible: false,
+      message:
+        '<p style="font-size: 20px;">Harap masukan angka yang valid!</p>',
+      position: {
+        x: "center",
+        y: "bottom",
+      },
+      ripple: false,
+    });
     return;
   }
 
   // Konversi input ke number
-  const suhu = parseFloat(inputSuhu);
+  const suhu = parseFloat(inputCelsius.value);
   let hasil;
   let penjelasan;
 
@@ -99,7 +111,7 @@ function konversiSuhu() {
     )}°C`;
 
     // Tampilkan hasil di input Celsius
-    inputCelsius.value = hasil.toFixed(2);
+    inputFahrenheit.value = hasil.toFixed(2);
   }
 
   // Tampilkan penjelasan di textarea
@@ -120,20 +132,28 @@ function reverseMode() {
   // Reset form saat mode berubah
   resetForm();
 
+  let labelCelsius = document.getElementById("labelCelsius")
+  let labelFahrenheit = document.getElementById("labelFahrenheit")
+
   // Ubah readonly status input
   if (modeCelsiusToFahrenheit) {
-    inputCelsius.readOnly = false;
+    // Mode: Celsius ke Fahrenheit
+    labelCelsius.innerHTML = "Celsius (&deg;C):";
+    labelFahrenheit.innerHTML = "Fahrenheit (&deg;F):";
+
     // readonly ada dua karena setAttribute butuh 2 parameter wajib
     // inputFahrenheit.setAttribute("readonly", "readonly");
-    inputFahrenheit.readOnly = true;
     inputCelsius.placeholder = "Masukkan Celsius...";
     inputFahrenheit.placeholder = "Hasil Fahrenheit";
   } else {
-    inputFahrenheit.readOnly = false;
-    // inputCelsius.setAttribute("readonly", "readonly");
-    inputCelsius.readOnly = true;
-    inputFahrenheit.placeholder = "Masukkan Fahrenheit...";
-    inputCelsius.placeholder = "Hasil Celsius";
+    // Mode: Fahrenheit ke Celsius - TUKAR LABEL
+    labelCelsius.innerHTML = "Fahrenheit (&deg;F):";
+    labelFahrenheit.innerHTML = "Celsius (&deg;C):";
+
+    // inputCelsius.readOnly = true;
+
+    inputCelsius.placeholder = "Masukkan Fahrenheit...";
+    inputFahrenheit.placeholder = "Hasil Celsius";
   }
 }
 
@@ -181,4 +201,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
