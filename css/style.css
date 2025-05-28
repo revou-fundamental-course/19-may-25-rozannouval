@@ -421,8 +421,6 @@ form input:focus {
   color: white;
 }
 
-
-
 /* FOOTER CSS */
 footer {
   background: var(--secondary);
@@ -439,21 +437,43 @@ footer {
   z-index: 99;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 768px) {
+  .form-temperature {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .temperature-content {
+    padding: 1rem;
+  }
+  .typing-card {
+    width: 90%;
+    text-align: center;
+  }
+  .rumus-container {
+    text-align: center;
+  }
+  .rumus {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  .rumus-content {
+    font-size: 25px;
+  }
+  .developer-container {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  .developer-container p {
+    width: 100%;
+    padding: 0 4rem;
+  }
+  .medsos-container {
+    justify-content: center;
+  }
+}
 
 /* CARD COMPONENT */
 .card {
@@ -596,4 +616,3 @@ footer {
     blinkCursor 0.5s step-end infinite alternate;
   margin-top: 1.5em;
 }
-
